@@ -10,6 +10,7 @@ import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 
 class DataFragment : Fragment() {
@@ -25,7 +26,6 @@ class DataFragment : Fragment() {
     // Inflate the layout for this fragment
     return ComposeView(requireContext()).apply {
       setContent {
-        Text(modifier = Modifier.padding(100.dp), text = "Hello world.")
       }
     }
   }

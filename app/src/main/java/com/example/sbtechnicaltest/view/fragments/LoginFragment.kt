@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.sbtechnicaltest.view.components.login.LoginPage
 
 
 class LoginFragment : Fragment() {
@@ -23,9 +26,16 @@ class LoginFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View {
     return ComposeView(requireContext()).apply {
+      val email = ""
+      val password = ""
+      val navController = NavController(requireContext())
+
       setContent {
-        Text(modifier = Modifier.padding(100.dp), text = "Hello world.")
+        Column(Modifier
+          .padding(top = 100.dp, start = 40.dp)) {
+          LoginPage(email, password, navController)
+        }
       }
     }
   }
-}
+  }
