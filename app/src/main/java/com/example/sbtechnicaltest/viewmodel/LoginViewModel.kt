@@ -5,17 +5,17 @@ import com.example.sbtechnicaltest.R
 
 class LoginViewModel(private val email: String,
                      private val password: String,
-                     private val navController: NavController) {
+                     private val navController: NavController?) {
 
   private val emailExtensions: List<String> =
     listOf("@gmail.com", "@gmail.co.uk",
            "@yahoo.com", "@yahoo.co.uk",
-            "@hotmail.com", "@hotmail.co.uk")
+            "@hotmail.com", "@hotmail.co.uk", ".ac.uk")
 
   private val uniqueCharacter: List<Char> = listOf('%', '?', '!', '#', '~', '-')
 
   fun navigateToData() {
-    navController.navigate(R.id.dataFragment)
+    navController!!.navigate(R.id.dataFragment)
   }
 
  fun verifyUser(): Boolean {
@@ -37,14 +37,15 @@ class LoginViewModel(private val email: String,
 
   private fun checkPassword(): Boolean {
     for (char in this.uniqueCharacter) {
-      if (password.matches(Regex(".*[A-Z].*")) && password.contains(char))
-        // check for uppercase and unique character
-        if (password.matches(Regex("\\d")))
-          // check for a digit in the password
-          return true
+      if (password.contains(char))
+        return  password.contains(Regex(".*[A-Z].*")) &&
+                password.contains(Regex("\\d")) &&
+                password.length >= 8
+
+         // check for uppercase and unique character
+        // check for a digit in the password
+       // check if password is 8 characters or longer
     }
     return false
-
   }
-
 }
