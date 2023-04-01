@@ -38,9 +38,9 @@ class DataFragment : Fragment() {
         val data = DataViewModel()
         val jsonListState = data.bootJson.collectAsState()
 
-        Column(Modifier.padding(top = 100.dp)) {
+        Column(Modifier.padding(top = 60.dp)) {
           TopBar()
-          Column(Modifier.padding(top = 100.dp, start = 40.dp)) {
+          Column(Modifier.padding(top = 40.dp, bottom = 80.dp)) {
             LazyColumn(
               Modifier
                 .fillMaxHeight(1.0f)

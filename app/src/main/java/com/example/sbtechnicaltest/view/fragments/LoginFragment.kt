@@ -27,8 +27,8 @@ class LoginFragment : Fragment() {
     val navController = findNavController()
 
     return ComposeView(requireContext()).apply {
-      val email = mutableStateOf("")
-      val password = mutableStateOf("")
+      val email = mutableStateOf("ayestar123@gmail.com")
+      val password = mutableStateOf("Password123%")
       setContent {
         Column(Modifier.padding(top = 100.dp, start = 40.dp)) {
           LoginPage(email, password, navController)
