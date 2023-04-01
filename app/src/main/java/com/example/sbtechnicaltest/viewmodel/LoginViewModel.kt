@@ -1,24 +1,18 @@
 package com.example.sbtechnicaltest.viewmodel
 
-import androidx.navigation.NavController
-import com.example.sbtechnicaltest.R
-
 class LoginViewModel(private val email: String,
-                     private val password: String,
-                     private val navController: NavController?) {
+                     private val password: String) {
 
   private val emailExtensions: List<String> =
-    listOf("@gmail.com", "@gmail.co.uk",
-           "@yahoo.com", "@yahoo.co.uk",
-            "@hotmail.com", "@hotmail.co.uk", ".ac.uk")
+    listOf(
+      "@gmail.com", "@gmail.co.uk",
+      "@yahoo.com", "@yahoo.co.uk",
+      "@hotmail.com", "@hotmail.co.uk", ".ac.uk"
+    )
 
   private val uniqueCharacter: List<Char> = listOf('%', '?', '!', '#', '~', '-')
 
-  fun navigateToData() {
-    navController!!.navigate(R.id.dataFragment)
-  }
-
- fun verifyUser(): Boolean {
+  fun verifyUser(): Boolean {
     return checkCredentials()
   }
 
@@ -38,14 +32,18 @@ class LoginViewModel(private val email: String,
   private fun checkPassword(): Boolean {
     for (char in this.uniqueCharacter) {
       if (password.contains(char))
-        return  password.contains(Regex(".*[A-Z].*")) &&
+        return password.contains(Regex(".*[A-Z].*")) &&
                 password.contains(Regex("\\d")) &&
                 password.length >= 8
 
-         // check for uppercase and unique character
-        // check for a digit in the password
-       // check if password is 8 characters or longer
+      // check for uppercase and unique character
+      // check for a digit in the password
+      // check if password is 8 characters or longer
     }
     return false
+  }
+
+  fun getCredentials(): String {
+    return "Email: $email Password: $password"
   }
 }

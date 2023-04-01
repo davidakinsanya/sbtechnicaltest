@@ -1,4 +1,4 @@
-package com.example.sbtechnicaltest.view.components
+package com.example.sbtechnicaltest.view.components.login
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,12 +11,11 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
-  fun InputField(input: String, label: String) {
-  var text by remember { mutableStateOf(input) }
+  fun InputField(input: MutableState<String>, label: String) {
     TextField(
       modifier = Modifier.fillMaxWidth(0.9f),
-      value = text,
-      onValueChange = { text = it },
+      value = input.value,
+      onValueChange = { input.value = it },
       label = { Text(label) },
     )
   Spacer(Modifier.padding(5.dp))

@@ -1,15 +1,20 @@
 package com.example.sbtechnicaltest.view.components.login
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.navigation.NavController
-import com.example.sbtechnicaltest.view.components.InputField
 import com.example.sbtechnicaltest.view.components.LoginPrompt
 import com.example.sbtechnicaltest.viewmodel.LoginViewModel
 
 @Composable
-fun LoginPage(email: String, password: String, navController: NavController) {
+fun LoginPage(email: MutableState<String>,
+              password: MutableState<String>,
+              navController: NavController) {
+
+  val loginViewModel = LoginViewModel(email.value, password.value);
+
   LoginPrompt()
   InputField(email, "Email")
   InputField(password, "Password")
-  LoginButton(LoginViewModel(email, password, navController))
+  LoginButton(loginViewModel, navController)
 }
