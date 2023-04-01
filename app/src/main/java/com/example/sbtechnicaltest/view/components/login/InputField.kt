@@ -13,7 +13,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 
 
-@Composable
+  @Composable
   fun InputField(input: MutableState<String>, label: String) {
     TextField(
       modifier = Modifier.fillMaxWidth(0.9f),
