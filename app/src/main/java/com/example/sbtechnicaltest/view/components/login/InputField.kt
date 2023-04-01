@@ -10,17 +10,20 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 
 
   @Composable
   fun InputField(input: MutableState<String>, label: String) {
+    val bool: Boolean = label == "Password"
+
     TextField(
       modifier = Modifier.fillMaxWidth(0.9f),
       value = input.value,
       onValueChange = { input.value = it },
       label = { Text(label) },
-      visualTransformation = PasswordVisualTransformation(),
+      visualTransformation = if (bool) PasswordVisualTransformation() else VisualTransformation.None,
       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password))
 
   Spacer(Modifier.padding(5.dp))
