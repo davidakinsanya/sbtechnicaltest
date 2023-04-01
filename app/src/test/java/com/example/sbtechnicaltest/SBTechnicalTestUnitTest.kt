@@ -27,7 +27,7 @@ class SBTechnicalTestUnitTest {
     val email = "ayestar123@gmail.com"
     val password = "Password1%"
 
-    val login = LoginViewModel(email, password, null)
+    val login = LoginViewModel(email, password)
     assertTrue(login.verifyUser())
   }
 
@@ -36,7 +36,7 @@ class SBTechnicalTestUnitTest {
     val email = "studentbeans67@yahoo.com"
     val password = "Pass1~"
 
-    val login = LoginViewModel(email, password, null)
+    val login = LoginViewModel(email, password)
     assertFalse(login.verifyUser())
   }
 
@@ -45,7 +45,7 @@ class SBTechnicalTestUnitTest {
     val email = "studentbeans67@yahoo.co"
     val password = "Password1%"
 
-    val login = LoginViewModel(email, password, null)
+    val login = LoginViewModel(email, password)
     assertFalse(login.verifyUser())
   }
 }

@@ -5,9 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
@@ -29,14 +28,12 @@ class LoginFragment : Fragment() {
 
     return ComposeView(requireContext()).apply {
       val email = mutableStateOf("")
-      val password =  mutableStateOf("")
-
+      val password = mutableStateOf("")
       setContent {
-        Column(Modifier
-          .padding(top = 100.dp, start = 40.dp)) {
+        Column(Modifier.padding(top = 100.dp, start = 40.dp)) {
           LoginPage(email, password, navController)
         }
       }
     }
   }
-  }
+}

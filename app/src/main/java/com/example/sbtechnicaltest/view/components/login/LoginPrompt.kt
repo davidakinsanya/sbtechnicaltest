@@ -1,4 +1,4 @@
-package com.example.sbtechnicaltest.view.components
+package com.example.sbtechnicaltest.view.components.login
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

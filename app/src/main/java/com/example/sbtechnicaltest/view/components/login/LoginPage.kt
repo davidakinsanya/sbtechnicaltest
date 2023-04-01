@@ -3,7 +3,6 @@ package com.example.sbtechnicaltest.view.components.login
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.navigation.NavController
-import com.example.sbtechnicaltest.view.components.LoginPrompt
 import com.example.sbtechnicaltest.viewmodel.LoginViewModel
 
 @Composable

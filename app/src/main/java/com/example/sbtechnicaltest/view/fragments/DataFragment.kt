@@ -5,12 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import com.example.sbtechnicaltest.view.components.data.JsonCard
+import com.example.sbtechnicaltest.view.components.data.TopBar
+import com.example.sbtechnicaltest.viewmodel.DataViewModel
 
 
 class DataFragment : Fragment() {
@@ -23,10 +33,31 @@ class DataFragment : Fragment() {
     inflater: LayoutInflater, container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    // Inflate the layout for this fragment
     return ComposeView(requireContext()).apply {
       setContent {
-        Text("Hello World!")
+        val data = DataViewModel()
+        val jsonListState = data.bootJson.collectAsState()
+
+        Column(Modifier.padding(top = 100.dp)) {
+          TopBar()
+          Column(Modifier.padding(top = 100.dp, start = 40.dp)) {
+            LazyColumn(
+              Modifier
+                .fillMaxHeight(1.0f)
+                .fillMaxWidth(1.0f)
+                .padding(15.dp)
+                .background(
+                  color = Color.Transparent,
+                  shape = RoundedCornerShape(50.dp)
+                ),
+            )
+            {
+              itemsIndexed(jsonListState.value) { _, item ->
+                JsonCard(item)
+              }
+            }
+          }
+        }
       }
     }
   }

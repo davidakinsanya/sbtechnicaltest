@@ -26,5 +26,5 @@ import androidx.compose.ui.unit.dp
       visualTransformation = if (bool) PasswordVisualTransformation() else VisualTransformation.None,
       keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password))
 
-  Spacer(Modifier.padding(5.dp))
+    Spacer(Modifier.padding(5.dp))
   }
