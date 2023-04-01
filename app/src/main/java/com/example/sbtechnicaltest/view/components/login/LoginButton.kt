@@ -8,10 +8,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.sbtechnicaltest.viewmodel.LoginViewModel
 
 @Composable
-fun LoginButton() {
-  Button(modifier = Modifier.fillMaxWidth(0.9f).padding(top = 90.dp), onClick  = {}) {
+fun LoginButton(viewModel: LoginViewModel) {
+  Button(modifier =
+    Modifier
+      .fillMaxWidth(0.9f)
+      .padding(top = 90.dp),
+    onClick  = {
+      if (viewModel.verifyUser())
+        viewModel.navigateToData()
+    }) {
     Text(text = "LOG IN", Modifier.align(Alignment.CenterVertically))
   }
 }
