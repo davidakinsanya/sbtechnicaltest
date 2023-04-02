@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.unit.dp
+import androidx.navigation.fragment.findNavController
 import com.example.sbtechnicaltest.view.components.data.JsonCard
 import com.example.sbtechnicaltest.view.components.data.TopBar
 import com.example.sbtechnicaltest.viewmodel.DataViewModel
@@ -40,10 +41,11 @@ class DataFragment : Fragment() {
     return ComposeView(requireContext()).apply {
       setContent {
         val data = DataViewModel()
+        val navController = findNavController()
         val jsonListState = data.bootJson.collectAsState()
 
         Column(Modifier.padding(top = 60.dp)) {
-          TopBar()
+          TopBar(navController)
           Column(Modifier.padding(top = 40.dp, bottom = 80.dp)) {
             LazyColumn(
               Modifier

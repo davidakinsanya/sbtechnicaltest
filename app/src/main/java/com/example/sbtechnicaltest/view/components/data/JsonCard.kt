@@ -4,10 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.sbtechnicaltest.model.JsonPlaceholderData
@@ -36,6 +34,11 @@ fun JsonCard (json: JsonPlaceholderData) {
   }
 }
 
+/**
+ * A composable function used to display an image.
+ *
+ * @param image the image url
+ */
   @Composable
   fun RenderImage(image: String) {
     Column(
@@ -49,19 +52,24 @@ fun JsonCard (json: JsonPlaceholderData) {
     }
   }
 
-    @Composable
-    fun RenderTitle(title: String) {
-      Column(
-        modifier = Modifier.fillMaxHeight(1f),
-        verticalArrangement = Arrangement.Center
-      ) {
+  /**
+   * A composable function used to display a json title.
+   *
+   * @param title the json title
+   */
+  @Composable
+  fun RenderTitle(title: String) {
+    Column(
+      modifier = Modifier.fillMaxHeight(1f),
+      verticalArrangement = Arrangement.Center
+    ) {
 
-        Text(
-          text = title,
-          modifier = Modifier
-            .padding(top = 5.dp).height(70.dp).width(100.dp),
-          color = Color.Black,
-          maxLines = 3
-        )
-      }
+      Text(
+        text = title,
+        modifier = Modifier
+          .padding(top = 5.dp).height(70.dp).width(100.dp),
+        color = Color.Black,
+        maxLines = 3
+      )
     }
+  }

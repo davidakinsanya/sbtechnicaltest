@@ -19,5 +19,9 @@
       android:id="@+id/dataFragment"
       android:name="com.example.sbtechnicaltest.view.fragments.DataFragment"
       android:label="fragment_data"
-      tools:layout="@layout/fragment_data" />
+      tools:layout="@layout/fragment_data" >
+    <action
+        android:id="@+id/action_dataFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+  </fragment>
 </navigation>
