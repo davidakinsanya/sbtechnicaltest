@@ -7,7 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.example.sbtechnicaltest.model.JsonPlaceholderData
 
 /**
@@ -21,25 +23,32 @@ fun JsonCard (json: JsonPlaceholderData) {
     modifier = Modifier
       .fillMaxWidth(1.0f)
       .padding(15.dp)
-      .height(60.dp),
+      .height(140.dp),
     elevation = 10.dp,
   ) {
     Row(
       modifier = Modifier.padding(10.dp)
     ) {
       Column(
-        Modifier.padding(top = 10.dp),
-        verticalArrangement = Arrangement.Center
-        , horizontalAlignment = Alignment.CenterHorizontally) {
-        // Put Image here
-        Text("000" , Modifier.size(36.dp), color = Color.Blue)
-      }
-      Spacer(Modifier.padding(start = 0.dp))
+        modifier = Modifier.fillMaxHeight(3.0f)) {
 
-      Column(verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        // Put text here
-        Text(text = "View log", Modifier.size(40.dp), color = Color.Blue)
+        AsyncImage(
+          model = json.thumbnailUrl,
+          contentDescription = null,
+          modifier = Modifier.fillMaxHeight()
+        )
+
+      }
+      Spacer(Modifier.padding(start = 50.dp))
+
+      Column(modifier = Modifier.fillMaxHeight(1f),
+        verticalArrangement = Arrangement.Center) {
+
+        Text(text = json.title,
+             modifier = Modifier
+               .padding(top = 5.dp).height(70.dp).width(100.dp),
+              color = Color.Black,
+              maxLines = 3)
       }
     }
   }
