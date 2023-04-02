@@ -10,6 +10,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.sbtechnicaltest.model.JsonPlaceholderData
 
+/**
+ * A composable function used to display Json data.
+ *
+ * @param json a JsonPlaceholderData object
+ */
 @Composable
 fun JsonCard (json: JsonPlaceholderData) {
   Card(

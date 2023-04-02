@@ -13,8 +13,13 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 
-
-  @Composable
+/**
+ * A composable function representing an input field for the login page.
+ *
+ * @param input the mutable state of the users input
+ * @param label a String represent what data the user is inputting
+ */
+@Composable
   fun InputField(input: MutableState<String>, label: String) {
     val bool: Boolean = label == "Password"
 

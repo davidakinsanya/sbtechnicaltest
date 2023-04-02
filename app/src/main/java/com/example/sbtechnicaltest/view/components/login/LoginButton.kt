@@ -12,6 +12,14 @@ import androidx.navigation.NavController
 import com.example.sbtechnicaltest.R
 import com.example.sbtechnicaltest.viewmodel.LoginViewModel
 
+/**
+ * A composable function representing a login button.
+ *
+ * @param viewModel a ViewModel object containing business logic
+ *                  regarding logging in
+ * @param navController a Navigation Controller to navigate to the next screen
+ *                      if the business rules are met
+ */
 @Composable
 fun LoginButton(viewModel: LoginViewModel, navController: NavController) {
   Button(modifier =

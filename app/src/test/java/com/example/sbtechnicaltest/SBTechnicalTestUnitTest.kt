@@ -16,12 +16,20 @@ import org.junit.Assert.*
  */
 class SBTechnicalTestUnitTest {
 
+  /**
+   * This method tests whether the getData() method in DataViewModel
+   * returns the appropriate data type.
+   */
   @Test
   fun basicViewModelTest() {
     val data = DataViewModel()
     assertNotNull(data.getData())
   }
 
+  /**
+   * This method test whether an appropriate email and password
+   * is verified successfully by the LoginViewModel
+   */
   @Test
   fun basicLoginViewModelTest1() {
     val email = "ayestar123@gmail.com"
@@ -31,6 +39,10 @@ class SBTechnicalTestUnitTest {
     assertTrue(login.verifyUser())
   }
 
+  /**
+   * This method test whether an inappropriate email and password
+   * is successfully not verified by the LoginViewModel
+   */
   @Test
   fun basicLoginViewModelTest2() {
     val email = "studentbeans67@yahoo.com"
@@ -40,6 +52,11 @@ class SBTechnicalTestUnitTest {
     assertFalse(login.verifyUser())
   }
 
+  /**
+   * This method test whether another case where
+   * an inappropriate email and password
+   * is successfully not verified by the LoginViewModel
+   */
   @Test
   fun basicLoginViewModelTest3() {
     val email = "studentbeans67@yahoo.co"

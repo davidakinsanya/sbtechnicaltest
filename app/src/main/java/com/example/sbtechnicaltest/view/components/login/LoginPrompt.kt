@@ -1,6 +1,5 @@
 package com.example.sbtechnicaltest.view.components.login
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
@@ -10,6 +9,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * A composable function representing the top half
+ * of the login screen.
+ */
 @Composable
 fun LoginPrompt() {
     Text(text = "Welcome Back",

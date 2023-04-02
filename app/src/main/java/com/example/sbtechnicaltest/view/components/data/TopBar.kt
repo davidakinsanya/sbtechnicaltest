@@ -8,6 +8,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+/**
+ * A composable function representing the top half
+ * of the data screen.
+ */
 @Composable
 fun TopBar() {
   Text(

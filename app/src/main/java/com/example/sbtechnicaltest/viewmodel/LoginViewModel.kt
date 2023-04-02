@@ -1,5 +1,11 @@
 package com.example.sbtechnicaltest.viewmodel
 
+/**
+ * This class represents the business logic regarding
+ * whether a user can log in the app or not.
+ *
+ * @author david
+ */
 class LoginViewModel(private val email: String,
                      private val password: String) {
 
@@ -12,14 +18,29 @@ class LoginViewModel(private val email: String,
 
   private val uniqueCharacter: List<Char> = listOf('%', '?', '!', '#', '~', '-')
 
+  /**
+   * This method executes and returns the output of checkCredentials().
+   *
+   * return the output of checkCredentials()
+   */
   fun verifyUser(): Boolean {
     return checkCredentials()
   }
 
+  /**
+   * This method checks whether both the email and password are valid.
+   *
+   * @return a Boolean representing whether both the email and password are valid
+   */
   private fun checkCredentials(): Boolean {
     return checkEmail() && checkPassword()
   }
 
+  /**
+   * This method checks if email meets a specific criteria.
+   *
+   * @return a boolean representing whether or not the email is valid
+   */
   private fun checkEmail(): Boolean {
     for (ext in this.emailExtensions) {
       if (email.contains(ext))
@@ -29,6 +50,11 @@ class LoginViewModel(private val email: String,
     return false
   }
 
+  /**
+   * This method checks if the password meets a specified criteria.
+   *
+   * @return a boolean representing whether or not the password is valid
+   */
   private fun checkPassword(): Boolean {
     for (char in this.uniqueCharacter) {
       if (password.contains(char))
@@ -43,6 +69,11 @@ class LoginViewModel(private val email: String,
     return false
   }
 
+  /**
+   * A basic toString() method for debugging.
+   *
+   * @return a String representation of the email and password
+   */
   fun getCredentials(): String {
     return "Email: $email Password: $password"
   }

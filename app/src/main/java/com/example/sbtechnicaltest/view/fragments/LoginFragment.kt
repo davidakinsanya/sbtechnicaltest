@@ -13,7 +13,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.fragment.findNavController
 import com.example.sbtechnicaltest.view.components.login.LoginPage
 
-
+/**
+ * This class contains the fragment displaying the UI regarding the login screen.
+ *
+ * @author david
+ */
 class LoginFragment : Fragment() {
 
   override fun onCreate(savedInstanceState: Bundle?) {

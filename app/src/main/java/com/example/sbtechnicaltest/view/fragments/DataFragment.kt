@@ -22,7 +22,11 @@ import com.example.sbtechnicaltest.view.components.data.JsonCard
 import com.example.sbtechnicaltest.view.components.data.TopBar
 import com.example.sbtechnicaltest.viewmodel.DataViewModel
 
-
+/**
+ * This class contains the fragment displaying the UI regarding the data screen.
+ *
+ * @author david
+ */
 class DataFragment : Fragment() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
