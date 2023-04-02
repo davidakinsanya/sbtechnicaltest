@@ -25,7 +25,7 @@ class SBTechnicalTestUnitTest {
 
   /**
    * This method test whether an appropriate email and password
-   * is verified successfully by the LoginViewModel
+   * is verified successfully by the LoginViewModel.
    */
   @Test
   fun basicLoginViewModelTest1() {
@@ -38,7 +38,7 @@ class SBTechnicalTestUnitTest {
 
   /**
    * This method test whether an inappropriate email and password
-   * is successfully not verified by the LoginViewModel
+   * is successfully not verified by the LoginViewModel.
    */
   @Test
   fun basicLoginViewModelTest2() {
@@ -52,7 +52,7 @@ class SBTechnicalTestUnitTest {
   /**
    * This method test whether another case where
    * an inappropriate email and password
-   * is successfully not verified by the LoginViewModel
+   * is successfully not verified by the LoginViewModel.
    */
   @Test
   fun basicLoginViewModelTest3() {
