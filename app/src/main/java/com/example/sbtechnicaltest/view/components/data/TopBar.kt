@@ -33,7 +33,9 @@ fun TopBar(navController: NavController) {
 
 @Composable
 fun BackButton(navController: NavController) {
-  Button(onClick = {navController.navigate(R.id.action_dataFragment_to_loginFragment)}, modifier = Modifier.background(color = Color.Transparent)) {
+  Button(onClick = {navController.navigate(R.id.action_dataFragment_to_loginFragment)},
+         modifier = Modifier.background(color = Color.Transparent)) {
+
     AsyncImage(
       model = "https://img.icons8.com/material-outlined/512/u-turn-to-right.png",
       contentDescription = null,
