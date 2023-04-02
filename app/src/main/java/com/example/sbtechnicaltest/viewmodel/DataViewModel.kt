@@ -13,7 +13,7 @@ import java.net.URL
 /**
  * This class represents the business logic regarding getting Json data into the app.
  *
- * @author
+ * @author david
  */
 class DataViewModel: ViewModel() {
   private val _bootJson = MutableStateFlow(listOf<JsonPlaceholderData>())
