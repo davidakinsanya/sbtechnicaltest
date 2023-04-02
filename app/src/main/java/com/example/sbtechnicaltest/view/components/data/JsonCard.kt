@@ -29,27 +29,39 @@ fun JsonCard (json: JsonPlaceholderData) {
     Row(
       modifier = Modifier.padding(10.dp)
     ) {
-      Column(
-        modifier = Modifier.fillMaxHeight(3.0f)) {
-
-        AsyncImage(
-          model = json.thumbnailUrl,
-          contentDescription = null,
-          modifier = Modifier.fillMaxHeight()
-        )
-
-      }
+      RenderImage(json.url)
       Spacer(Modifier.padding(start = 50.dp))
-
-      Column(modifier = Modifier.fillMaxHeight(1f),
-        verticalArrangement = Arrangement.Center) {
-
-        Text(text = json.title,
-             modifier = Modifier
-               .padding(top = 5.dp).height(70.dp).width(100.dp),
-              color = Color.Black,
-              maxLines = 3)
-      }
+      RenderTitle(json.title)
     }
   }
 }
+
+  @Composable
+  fun RenderImage(image: String) {
+    Column(
+      modifier = Modifier.fillMaxHeight(3.0f)
+    ) {
+      AsyncImage(
+        model = image,
+        contentDescription = null,
+        modifier = Modifier.fillMaxHeight()
+      )
+    }
+  }
+
+    @Composable
+    fun RenderTitle(title: String) {
+      Column(
+        modifier = Modifier.fillMaxHeight(1f),
+        verticalArrangement = Arrangement.Center
+      ) {
+
+        Text(
+          text = title,
+          modifier = Modifier
+            .padding(top = 5.dp).height(70.dp).width(100.dp),
+          color = Color.Black,
+          maxLines = 3
+        )
+      }
+    }
