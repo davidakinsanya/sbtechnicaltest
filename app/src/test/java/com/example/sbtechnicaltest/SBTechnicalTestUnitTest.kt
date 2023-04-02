@@ -1,8 +1,5 @@
 package com.example.sbtechnicaltest
 
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.navigation.NavController
-import androidx.navigation.Navigation.findNavController
 import com.example.sbtechnicaltest.viewmodel.DataViewModel
 import com.example.sbtechnicaltest.viewmodel.LoginViewModel
 import org.junit.Test
