@@ -21,7 +21,7 @@ class SBTechnicalTestUnitTest {
    * returns the appropriate data type.
    */
   @Test
-  fun basicViewModelTest() {
+  fun basicDataViewModelTest() {
     val data = DataViewModel()
     assertNotNull(data.getData())
   }
