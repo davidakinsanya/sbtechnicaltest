@@ -1,6 +1,6 @@
 # Student Beans Android Task
 
-Homework exercise completed by David Akinsanya.
+Homework exercise completed by David Akinsanya. (https://github.com/thebeansgroup/StudentBeans_Android_Tech_Test)
 
 
 ## Configuration
